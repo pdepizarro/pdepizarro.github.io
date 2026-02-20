@@ -13812,13 +13812,12 @@ footer {
 }
 
 /* Panel derecho */
-.project-card .project-media {
-  padding: 0;
-  margin: 0;
-  background-repeat: no-repeat;
+.project-card .project-media{
+  aspect-ratio: 16 / 9;
+  background-size: contain;
   background-position: center;
-  background-size: cover;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  padding: 0;
 }
 
 /* Imagen concreta */
@@ -13830,5 +13829,11 @@ footer {
 @media (max-width: 991.98px) {
   .project-card .project-media {
     min-height: 240px;
+  }
+}
+
+@media (min-width: 992px){
+  .project-card .project-media{
+    aspect-ratio: 21 / 9;
   }
 }
