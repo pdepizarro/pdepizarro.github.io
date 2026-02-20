@@ -40,7 +40,7 @@
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
+  --bs-light: #0B0F0C;
   --bs-dark: #212529;
   --bs-primary-rgb: 22, 163, 74;
   --bs-secondary-rgb: 42, 47, 43;
@@ -48,7 +48,7 @@
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
+  --bs-light-rgb: 11, 15, 12;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -11631,177 +11631,136 @@ html {
   fill: #16A34A;
 }
 
-/* ==========================================================
-   Portfolio Theme Overrides — Black + Green (clean & consistent)
-   Keep this block at the END of the file so it wins over Bootstrap.
-   ========================================================== */
-
-/* 1) Brand tokens */
+/* ===== Dark theme overrides (black + green) ===== */
 :root{
-  /* Palette */
   --pp-black:#0B0F0C;
-  --pp-panel:#111827;          /* subtle contrast (avoid bluish by using only for cards) */
+  --pp-panel:#111827;
   --pp-border:#2A2F2B;
   --pp-text:#F5F5F5;
   --pp-muted:#9CA3AF;
   --pp-green:#16A34A;
   --pp-green-hover:#22C55E;
   --pp-green-dark:#15803D;
-
-  /* Bootstrap variable overrides (utilities like .bg-light, .text-primary, etc.) */
-  --bs-primary: var(--pp-green);
-  --bs-primary-rgb: 22, 163, 74;
-
-  --bs-secondary: var(--pp-border);
-  --bs-secondary-rgb: 42, 47, 43;
-
-  /* IMPORTANT: make bg-light NOT bluish */
-  --bs-light: var(--pp-black);
-  --bs-light-rgb: 11, 15, 12;
-
-  --bs-body-bg: var(--pp-black);
-  --bs-body-bg-rgb: 11, 15, 12;
-  --bs-body-color: var(--pp-text);
-  --bs-body-color-rgb: 245, 245, 245;
-
-  --bs-border-color: var(--pp-border);
-  --bs-border-color-translucent: rgba(42, 47, 43, 0.6);
-
-  --bs-link-color: var(--pp-green);
-  --bs-link-hover-color: var(--pp-green-hover);
-
-  /* Focus ring (Bootstrap 5.2 uses this var in some components) */
-  --bs-focus-ring-color: rgba(22, 163, 74, 0.25);
 }
 
-/* 2) Global backgrounds (remove template blues) */
-html, body{
+/* Base */
+html, body {
   background-color: var(--pp-black) !important;
   color: var(--pp-text) !important;
 }
+section { background-color: var(--pp-black) !important; }
 
-/* Many pages wrap content in sections/headers using bg-* utilities */
-section, header, main, footer{
-  background-color: var(--pp-black) !important;
-}
-
-/* Utility backgrounds used heavily by the template */
-.bg-white,
-.bg-light,
-.bg-dark,
-.bg-body,
-.bg-body-tertiary{
-  background-color: var(--pp-black) !important;
-}
-
-/* If any area uses bg-primary (often footer strips), neutralize it */
-.bg-primary{
-  background-color: var(--pp-black) !important;
-}
-
-/* 3) Typography */
-h1, h2, h3, h4, h5, h6{ color: var(--pp-text) !important; }
-p{ color: var(--pp-muted); }
-.text-muted{ color: var(--pp-muted) !important; }
-.text-primary{ color: var(--pp-green) !important; }
+/* Typography */
+.text-muted { color: var(--pp-muted) !important; }
+p, .lead { color: var(--pp-muted); }
+h1, h2, h3, h4, h5, h6, .h1,.h2,.h3,.h4,.h5,.h6 { color: var(--pp-text); }
 
 /* Links */
-a{ color: var(--pp-green); text-decoration: none; }
-a:hover{ color: var(--pp-green-hover); }
+a { color: var(--pp-green); text-decoration: none; }
+a:hover { color: var(--pp-green-hover); }
 
-/* 4) Cards / panels (where we DO want subtle contrast) */
-.card{
-  background-color: var(--pp-panel) !important;
-  border: 1px solid var(--pp-border) !important;
-}
-.card .card-body{ color: var(--pp-text); }
-.shadow, .shadow-sm, .shadow-lg{ box-shadow: none !important; }
-
-/* Some template blocks use rounded containers with shadow — keep style consistent */
-.rounded-3, .rounded-4, .rounded-5{ border-color: var(--pp-border); }
-
-/* 5) Buttons */
-.btn-primary,
-.btn-primary:focus,
-.btn-primary:active{
-  background-color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
-  color: #fff !important;
-}
-.btn-primary:hover{
-  background-color: var(--pp-green-hover) !important;
-  border-color: var(--pp-green-hover) !important;
-  color: #fff !important;
-}
-.btn-outline-primary{
-  color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
-}
-.btn-outline-primary:hover{
-  background-color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
-  color: #fff !important;
-}
-
-/* 6) Navbar */
-.navbar{
+/* Navbar */
+.navbar {
   background-color: var(--pp-black) !important;
   border-bottom: 1px solid var(--pp-border);
 }
-.navbar-brand{
-  color: var(--pp-green) !important;
-  font-weight: 700;
-}
-.nav-link{
-  color: var(--pp-text) !important;
-}
-.nav-link:hover, .nav-link:focus{
-  color: var(--pp-green-hover) !important;
-}
+.navbar-brand { color: var(--pp-green) !important; font-weight: 700; }
+.nav-link { color: var(--pp-text) !important; }
+.nav-link:hover { color: var(--pp-green-hover) !important; }
 
-/* 7) Forms (dark friendly) */
-.form-control,
-.form-select,
-textarea{
-  background-color: var(--pp-black) !important;
+/* Buttons */
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--pp-green) !important;
+  border-color: var(--pp-green) !important;
+  color: #ffffff !important;
+}
+.btn-primary:hover {
+  background-color: var(--pp-green-hover) !important;
+  border-color: var(--pp-green-hover) !important;
+  color: #ffffff !important;
+}
+.btn-outline-dark {
   color: var(--pp-text) !important;
   border-color: var(--pp-border) !important;
 }
-.form-control::placeholder{ color: rgba(156, 163, 175, 0.75) !important; }
-.form-control:focus,
-.form-select:focus,
-textarea:focus{
-  border-color: rgba(34, 197, 94, 0.9) !important;
-  box-shadow: 0 0 0 0.25rem rgba(22, 163, 74, 0.25) !important;
-  outline: 0 !important;
+.btn-outline-dark:hover {
+  background-color: var(--pp-green) !important;
+  border-color: var(--pp-green) !important;
+  color: var(--pp-black) !important;
 }
 
-/* Checkbox/radio accents (avoid leftover bootstrap blue) */
-.form-check-input:checked{
+/* Background helper classes used by template */
+.bg-white { background-color: var(--pp-black) !important; }
+.bg-light { background-color: var(--pp-panel) !important; }
+.bg-dark { background-color: var(--pp-black) !important; }
+
+/* If something is using bg-primary (e.g., footer bar), keep it dark */
+.bg-primary { background-color: var(--pp-black) !important; }
+
+/* ===== Premium cards: graphite gradient + subtle green glow ===== */
+
+.card,
+.card.shadow,
+.card.shadow-sm,
+.card.shadow-lg,
+.rounded-4,
+.rounded-4.shadow,
+.rounded-4.shadow-sm,
+.rounded-4.shadow-lg,
+.shadow {
+  background: linear-gradient(180deg, #121612 0%, #0B0F0C 100%) !important;
+  border: 1px solid rgba(42, 47, 43, 0.9) !important;
+  background-image: none !important; /* elimina navy gradients del theme */
+}
+
+/* Texto secundario dentro de cards */
+.card .text-muted {
+  color: #9CA3AF !important;
+}
+
+/* Hover premium */
+.card:hover,
+.rounded-4:hover {
+  border-color: rgba(34, 197, 94, 0.35) !important;
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Forms (template defaults are white) */
+.form-control,
+.form-select {
+  background-color: var(--pp-panel) !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-border) !important;
+}
+.form-control::placeholder { color: var(--pp-muted) !important; }
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--pp-panel) !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-green) !important;
+  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
+}
+
+/* Checkboxes/radios (remove bootstrap blue) */
+.form-check-input:checked {
   background-color: var(--pp-green) !important;
   border-color: var(--pp-green) !important;
 }
-.form-check-input:focus{
-  box-shadow: 0 0 0 0.25rem rgba(22, 163, 74, 0.25) !important;
-  border-color: rgba(34, 197, 94, 0.9) !important;
+.form-check-input:focus {
+  border-color: var(--pp-green) !important;
+  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
 }
 
-/* 8) Template-specific gradients / hero styles */
-.bg-gradient-primary-to-secondary{
-  background: linear-gradient(135deg, var(--pp-black) 0%, var(--pp-green-dark) 100%) !important;
-}
-.text-gradient{
-  background: -webkit-linear-gradient(315deg, var(--pp-green-hover) 0%, var(--pp-green) 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-
-/* 9) Profile decoration dots (remove any unexpected colors) */
-.profile .dots-1 svg,
+/* Profile dots (remove leftover blue) */
 .profile .dots-2 svg,
-.profile .dots-3 svg{
-  fill: #ffffff !important;
-}
-.profile .dots-4 svg{
-  fill: var(--pp-green) !important;
+.profile .dots-4 svg { fill: var(--pp-green) !important; }
+
+/* Footer */
+footer {
+  background-color: var(--pp-black) !important;
+  border-top: 1px solid var(--pp-border);
 }
