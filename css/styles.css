@@ -11610,7 +11610,7 @@ html {
   top: 6.05vw;
 }
 .profile .dots-2 svg {
-  fill: #1e30f3;
+  fill: #16A34A;
 }
 .profile .dots-3 {
   position: absolute;
@@ -11628,172 +11628,118 @@ html {
   bottom: 4vw;
 }
 .profile .dots-4 svg {
-  fill: #1e30f3;
+  fill: #16A34A;
 }
 
 /* ===== Dark theme overrides (black + green) ===== */
-.text-muted { color: #9CA3AF !important; }
-.bg-white { background-color: #0B0F0C !important; }
-.bg-light { background-color: #111827 !important; }
-
-.card {
-  background-color: #111827 !important;
-  border-color: #2A2F2B !important;
+:root{
+  --pp-black:#0B0F0C;
+  --pp-panel:#111827;
+  --pp-border:#2A2F2B;
+  --pp-text:#F5F5F5;
+  --pp-muted:#9CA3AF;
+  --pp-green:#16A34A;
+  --pp-green-hover:#22C55E;
+  --pp-green-dark:#15803D;
 }
 
-.navbar { border-bottom: 1px solid #2A2F2B; }
-.nav-link { color: #F5F5F5 !important; }
-.nav-link:hover { color: #22C55E !important; }
-.navbar-brand { color: #16A34A !important; }
-
-.btn-outline-dark {
-  color: #F5F5F5 !important;
-  border-color: #2A2F2B !important;
+/* Base */
+html, body {
+  background-color: var(--pp-black) !important;
+  color: var(--pp-text) !important;
 }
-.btn-outline-dark:hover {
-  background-color: #16A34A !important;
-  border-color: #16A34A !important;
-  color: #0B0F0C !important;
-}
+section { background-color: var(--pp-black) !important; }
 
-/* ==== Force green theme (overrides Bootstrap defaults) ==== */
+/* Typography */
+.text-muted { color: var(--pp-muted) !important; }
+p, .lead { color: var(--pp-muted); }
+h1, h2, h3, h4, h5, h6, .h1,.h2,.h3,.h4,.h5,.h6 { color: var(--pp-text); }
+
+/* Links */
+a { color: var(--pp-green); text-decoration: none; }
+a:hover { color: var(--pp-green-hover); }
+
+/* Navbar */
+.navbar {
+  background-color: var(--pp-black) !important;
+  border-bottom: 1px solid var(--pp-border);
+}
+.navbar-brand { color: var(--pp-green) !important; font-weight: 700; }
+.nav-link { color: var(--pp-text) !important; }
+.nav-link:hover { color: var(--pp-green-hover) !important; }
+
+/* Buttons */
 .btn-primary,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #16A34A !important;
-  border-color: #16A34A !important;
+  background-color: var(--pp-green) !important;
+  border-color: var(--pp-green) !important;
   color: #ffffff !important;
 }
-
 .btn-primary:hover {
-  background-color: #22C55E !important;
-  border-color: #22C55E !important;
+  background-color: var(--pp-green-hover) !important;
+  border-color: var(--pp-green-hover) !important;
   color: #ffffff !important;
 }
-
-/* Si hay badges o elementos "primary" */
-.text-primary { color: #16A34A !important; }
-.bg-primary { background-color: #16A34A !important; }
-
-/* ==== Backgrounds to black ==== */
-html, body {
-  background-color: #0B0F0C !important;
-  color: #F5F5F5 !important;
+.btn-outline-dark {
+  color: var(--pp-text) !important;
+  border-color: var(--pp-border) !important;
+}
+.btn-outline-dark:hover {
+  background-color: var(--pp-green) !important;
+  border-color: var(--pp-green) !important;
+  color: var(--pp-black) !important;
 }
 
-.bg-white { background-color: #0B0F0C !important; }
-.bg-light { background-color: #111827 !important; }
+/* Background helper classes used by template */
+.bg-white { background-color: var(--pp-black) !important; }
+.bg-light { background-color: var(--pp-panel) !important; }
+.bg-dark { background-color: var(--pp-black) !important; }
 
-/* Cards/panels */
-.card {
-  background-color: #111827 !important;
-  border-color: #2A2F2B !important;
+/* If something is using bg-primary (e.g., footer bar), keep it dark */
+.bg-primary { background-color: var(--pp-black) !important; }
+
+/* Cards / panels */
+.card,
+.shadow,
+.rounded-4 {
+  background-color: var(--pp-panel) !important;
+  border-color: var(--pp-border) !important;
+}
+.card .text-muted { color: var(--pp-muted) !important; }
+
+/* Forms (template defaults are white) */
+.form-control,
+.form-select {
+  background-color: var(--pp-panel) !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-border) !important;
+}
+.form-control::placeholder { color: var(--pp-muted) !important; }
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--pp-panel) !important;
+  color: var(--pp-text) !important;
+  border-color: var(--pp-green) !important;
+  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
 }
 
-.text-muted { color: #9CA3AF !important; }
-p { color: #9CA3AF; }
-h1, h2, h3, h4, h5, h6 { color: #F5F5F5; }
+/* Checkboxes/radios (remove bootstrap blue) */
+.form-check-input:checked {
+  background-color: var(--pp-green) !important;
+  border-color: var(--pp-green) !important;
+}
+.form-check-input:focus {
+  border-color: var(--pp-green) !important;
+  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
+}
 
-a { color: #16A34A; text-decoration: none; }
-a:hover { color: #22C55E; }
+/* Profile dots (remove leftover blue) */
+.profile .dots-2 svg,
+.profile .dots-4 svg { fill: var(--pp-green) !important; }
 
-@media (min-width: 576px) {
-  .profile {
-    height: 60vw;
-    width: 60vw;
-  }
-  .profile .profile-img {
-    height: 65vw;
-  }
-  .profile .dots-1 {
-    width: 3vw;
-    right: 1.5vw;
-  }
-  .profile .dots-2 {
-    width: 3vw;
-    right: -4vw;
-  }
-  .profile .dots-3 {
-    width: 3vw;
-    left: 1.5vw;
-  }
-  .profile .dots-4 {
-    width: 3vw;
-    left: -4vw;
-  }
-}
-@media (min-width: 768px) {
-  .profile {
-    height: 50vw;
-    width: 50vw;
-  }
-  .profile .profile-img {
-    height: 55vw;
-  }
-  .profile .dots-1 {
-    width: 3vw;
-    right: 1.5vw;
-  }
-  .profile .dots-2 {
-    width: 3vw;
-    right: -4vw;
-  }
-  .profile .dots-3 {
-    width: 3vw;
-    left: 1.5vw;
-  }
-  .profile .dots-4 {
-    width: 3vw;
-    left: -4vw;
-  }
-}
-@media (min-width: 992px) {
-  .profile {
-    height: 40vw;
-    width: 40vw;
-  }
-  .profile .profile-img {
-    height: 45vw;
-  }
-  .profile .dots-1 {
-    width: 1.5vw;
-    right: 0.75vw;
-  }
-  .profile .dots-2 {
-    width: 1.5vw;
-    right: -2vw;
-  }
-  .profile .dots-3 {
-    width: 1.5vw;
-    left: 0.75vw;
-  }
-  .profile .dots-4 {
-    width: 1.5vw;
-    left: -2vw;
-  }
-}
-@media (min-width: 1200px) {
-  .profile {
-    height: 35vw;
-    width: 35vw;
-  }
-  .profile .profile-img {
-    height: 40vw;
-  }
-  .profile .dots-1 {
-    width: 1.5vw;
-    right: 0.75vw;
-  }
-  .profile .dots-2 {
-    width: 1.5vw;
-    right: -2vw;
-  }
-  .profile .dots-3 {
-    width: 1.5vw;
-    left: 0.75vw;
-  }
-  .profile .dots-4 {
-    width: 1.5vw;
-    left: -2vw;
-  }
+/* Footer */
+footer {
+  background-color: var(--pp-black) !important;
+  border-top: 1px solid var(--pp-border);
 }
