@@ -13840,7 +13840,16 @@ footer {
 }
 
 .store-badge{
-  height: 44px;
-  width: auto;
   display: block;
+  height: 48px;
+  width: auto;
+}
+
+/* Ajuste óptico específico */
+.store-badge--google{
+  height: 44px;      /* 👈 Google necesita menos altura */
+}
+
+.store-badge--apple{
+  height: 48px;
 }
