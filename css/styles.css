@@ -13807,34 +13807,34 @@ footer {
    - No padding, no cropping (contain)
    ========================================================= */
 
-.project-card .row.g-0 {
-  align-items: stretch;
+.project-card .project-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
-/* Panel derecho */
-.project-card .project-media{
-  aspect-ratio: 16 / 9;
+.project-card .project-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  right: 24px;
+  /* aire a la derecha */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding-right: 24px;
-  padding-left: 0px;
 }
 
-/* Imagen concreta */
-.project-media--imagin {
+.project-media--imagin::before {
   background-image: url("../assets/imaginbank_portfolio.png");
 }
 
-/* Altura mínima en móvil para que no quede enana */
 @media (max-width: 991.98px) {
   .project-card .project-media {
     min-height: 240px;
   }
 }
 
-@media (min-width: 992px){
-  .project-card .project-media{
+@media (min-width: 992px) {
+  .project-card .project-media {
     aspect-ratio: 21 / 9;
   }
 }
