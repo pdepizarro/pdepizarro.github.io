@@ -13803,26 +13803,24 @@ footer {
 
 /* ===== PROJECT CARD MEDIA — FULL HEIGHT ===== */
 
-.project-card {
-  --project-h: 380px;
-}
-
 .project-card .row.g-0 {
-  min-height: var(--project-h);
+  align-items: stretch;
 }
 
 .project-media {
-  height: var(--project-h);
   padding: 0;
-  overflow: hidden;
+  margin: 0;
   display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
 }
 
 .project-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 @media (max-width: 991.98px) {
