@@ -11634,7 +11634,8 @@ html {
 /* ===== Dark theme overrides (black + green) ===== */
 :root{
   --pp-black:#0B0F0C;
-  --pp-panel:#111827;
+  --pp-panel:#11140F;          /* graphite (no navy/blue) */
+  --pp-panel-2:#121612;        /* top gradient tone */
   --pp-border:#2A2F2B;
   --pp-text:#F5F5F5;
   --pp-muted:#9CA3AF;
@@ -11644,63 +11645,63 @@ html {
 }
 
 /* Base */
-html, body {
-  background-color: var(--pp-black) !important;
-  color: var(--pp-text) !important;
+html,body{
+  background-color:var(--pp-black)!important;
+  color:var(--pp-text)!important;
 }
-section { background-color: var(--pp-black) !important; }
+section,header,main{background-color:var(--pp-black)!important;}
+p{color:var(--pp-muted);}
 
-/* Typography */
-.text-muted { color: var(--pp-muted) !important; }
-p, .lead { color: var(--pp-muted); }
-h1, h2, h3, h4, h5, h6, .h1,.h2,.h3,.h4,.h5,.h6 { color: var(--pp-text); }
+a{color:var(--pp-green);}
+a:hover{color:var(--pp-green-hover);}
 
-/* Links */
-a { color: var(--pp-green); text-decoration: none; }
-a:hover { color: var(--pp-green-hover); }
+/* Bootstrap background helpers */
+.bg-white,.bg-light,.bg-dark{background-color:var(--pp-black)!important;}
+.text-muted{color:var(--pp-muted)!important;}
 
-/* Navbar */
-.navbar {
-  background-color: var(--pp-black) !important;
-  border-bottom: 1px solid var(--pp-border);
+/* Gradients used by template */
+.bg-gradient-primary-to-secondary{
+  background:linear-gradient(135deg,var(--pp-black) 0%,var(--pp-green-dark) 100%);
 }
-.navbar-brand { color: var(--pp-green) !important; font-weight: 700; }
-.nav-link { color: var(--pp-text) !important; }
-.nav-link:hover { color: var(--pp-green-hover) !important; }
+.text-gradient{
+  background:-webkit-linear-gradient(315deg,var(--pp-green-hover) 0%,var(--pp-green) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
 /* Buttons */
 .btn-primary,
 .btn-primary:focus,
-.btn-primary:active {
-  background-color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
-  color: #ffffff !important;
+.btn-primary:active{
+  background-color:var(--pp-green)!important;
+  border-color:var(--pp-green)!important;
+  color:#fff!important;
 }
-.btn-primary:hover {
-  background-color: var(--pp-green-hover) !important;
-  border-color: var(--pp-green-hover) !important;
-  color: #ffffff !important;
+.btn-primary:hover{
+  background-color:var(--pp-green-hover)!important;
+  border-color:var(--pp-green-hover)!important;
+  color:#fff!important;
 }
-.btn-outline-dark {
-  color: var(--pp-text) !important;
-  border-color: var(--pp-border) !important;
+.btn-outline-dark{
+  color:var(--pp-text)!important;
+  border-color:var(--pp-border)!important;
 }
-.btn-outline-dark:hover {
-  background-color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
-  color: var(--pp-black) !important;
+.btn-outline-dark:hover{
+  background-color:var(--pp-green)!important;
+  border-color:var(--pp-green)!important;
+  color:var(--pp-black)!important;
 }
 
-/* Background helper classes used by template */
-.bg-white { background-color: var(--pp-black) !important; }
-.bg-light { background-color: var(--pp-panel) !important; }
-.bg-dark { background-color: var(--pp-black) !important; }
+/* Navbar */
+.navbar{
+  background-color:var(--pp-black)!important;
+  border-bottom:1px solid var(--pp-border);
+}
+.navbar-brand{color:var(--pp-green)!important;font-weight:700;}
+.nav-link{color:var(--pp-text)!important;}
+.nav-link:hover{color:var(--pp-green-hover)!important;}
 
-/* If something is using bg-primary (e.g., footer bar), keep it dark */
-.bg-primary { background-color: var(--pp-black) !important; }
-
-/* ===== Premium cards: graphite gradient + subtle green glow ===== */
-
+/* ===== Premium cards (Option B) ===== */
 .card,
 .card.shadow,
 .card.shadow-sm,
@@ -11709,58 +11710,58 @@ a:hover { color: var(--pp-green-hover); }
 .rounded-4.shadow,
 .rounded-4.shadow-sm,
 .rounded-4.shadow-lg,
-.shadow {
-  background: linear-gradient(180deg, #121612 0%, #0B0F0C 100%) !important;
-  border: 1px solid rgba(42, 47, 43, 0.9) !important;
-  background-image: none !important; /* elimina navy gradients del theme */
+.shadow{
+  background:linear-gradient(180deg,var(--pp-panel-2) 0%,var(--pp-black) 100%)!important;
+  border:1px solid rgba(42,47,43,.9)!important;
+  background-image:none!important; /* kill template navy gradients */
 }
-
-/* Texto secundario dentro de cards */
-.card .text-muted {
-  color: #9CA3AF !important;
-}
-
-/* Hover premium */
 .card:hover,
-.rounded-4:hover {
-  border-color: rgba(34, 197, 94, 0.35) !important;
-  box-shadow:
-    0 0 0 1px rgba(34, 197, 94, 0.15),
-    0 10px 30px rgba(0, 0, 0, 0.55) !important;
+.rounded-4:hover{
+  border-color:rgba(34,197,94,.35)!important;
+  box-shadow:0 0 0 1px rgba(34,197,94,.15),0 10px 30px rgba(0,0,0,.55)!important;
 }
 
-/* Forms (template defaults are white) */
+/* Inner panels inside cards (e.g., date/role blocks) */
+.card .bg-light,
+.card .bg-white,
+.rounded-4 .bg-light,
+.rounded-4 .bg-white{
+  background-color:var(--pp-black)!important;
+}
+
+/* Forms (remove bootstrap blue focus) */
 .form-control,
-.form-select {
-  background-color: var(--pp-panel) !important;
-  color: var(--pp-text) !important;
-  border-color: var(--pp-border) !important;
+.form-select{
+  background-color:var(--pp-panel)!important;
+  color:var(--pp-text)!important;
+  border-color:var(--pp-border)!important;
 }
-.form-control::placeholder { color: var(--pp-muted) !important; }
+.form-control::placeholder{color:var(--pp-muted)!important;}
 .form-control:focus,
-.form-select:focus {
-  background-color: var(--pp-panel) !important;
-  color: var(--pp-text) !important;
-  border-color: var(--pp-green) !important;
-  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
+.form-select:focus{
+  background-color:var(--pp-panel)!important;
+  color:var(--pp-text)!important;
+  border-color:var(--pp-green)!important;
+  box-shadow:0 0 0 .25rem rgba(34,197,94,.20)!important;
 }
 
-/* Checkboxes/radios (remove bootstrap blue) */
-.form-check-input:checked {
-  background-color: var(--pp-green) !important;
-  border-color: var(--pp-green) !important;
+/* Checks/radios/range (remove bootstrap blue) */
+.form-check-input:checked{
+  background-color:var(--pp-green)!important;
+  border-color:var(--pp-green)!important;
 }
-.form-check-input:focus {
-  border-color: var(--pp-green) !important;
-  box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.20) !important;
+.form-check-input:focus{
+  border-color:var(--pp-green)!important;
+  box-shadow:0 0 0 .25rem rgba(34,197,94,.20)!important;
 }
+.form-range::-webkit-slider-thumb{background-color:var(--pp-green)!important;}
+.form-range::-moz-range-thumb{background-color:var(--pp-green)!important;}
+.form-range:focus::-webkit-slider-thumb{box-shadow:0 0 0 1px #fff,0 0 0 .25rem rgba(34,197,94,.20)!important;}
+.form-range:focus::-moz-range-thumb{box-shadow:0 0 0 1px #fff,0 0 0 .25rem rgba(34,197,94,.20)!important;}
 
-/* Profile dots (remove leftover blue) */
-.profile .dots-2 svg,
-.profile .dots-4 svg { fill: var(--pp-green) !important; }
-
-/* Footer */
-footer {
-  background-color: var(--pp-black) !important;
-  border-top: 1px solid var(--pp-border);
+/* Footer / primary bands */
+.bg-primary{background-color:var(--pp-black)!important;}
+footer{
+  background-color:var(--pp-black)!important;
+  border-top:1px solid var(--pp-border);
 }
