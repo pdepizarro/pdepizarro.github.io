@@ -13846,10 +13846,18 @@ footer {
 }
 
 /* Ajuste óptico específico */
-.store-badge--google{
-  height: 44px;      /* 👈 Google necesita menos altura */
+.store-link{
+  height: 52px;          /* altura visual común */
+  display: flex;
+  align-items: center;
 }
 
-.store-badge--apple{
-  height: 48px;
+.store-link img{
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.store-link:first-child img{
+  transform: translateY(2px);
 }
