@@ -13815,9 +13815,10 @@ footer {
 .project-card .project-media{
   aspect-ratio: 16 / 9;
   background-size: contain;
-  background-position: calc(50% - 24px) center;
+  background-position: center;
   background-repeat: no-repeat;
-  padding: 0;
+  padding-right: 24px;
+  padding-left: 0px;
 }
 
 /* Imagen concreta */
