@@ -13839,25 +13839,23 @@ footer {
   }
 }
 
+.store-badges{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .store-badge{
   display: block;
+  width: auto;
+}
+
+/* Ajuste óptico real */
+.store-badge--google{
+  height: 44px;
+}
+
+.store-badge--apple{
   height: 48px;
-  width: auto;
-}
-
-/* Ajuste óptico específico */
-.store-link{
-  height: 52px;          /* altura visual común */
-  display: flex;
-  align-items: center;
-}
-
-.store-link img{
-  height: 100%;
-  width: auto;
-  display: block;
-}
-
-.store-link:first-child img{
-  transform: translateY(2px);
 }
