@@ -13838,3 +13838,9 @@ footer {
     aspect-ratio: 21 / 9;
   }
 }
+
+.store-badge{
+  height: 44px;
+  width: auto;
+  display: block;
+}
