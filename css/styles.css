@@ -13855,10 +13855,10 @@ footer {
 
 /* Ajuste óptico REAL */
 .store-badge--google {
-  height: 44px;
+  height: 48px;
 }
 
 .store-badge--apple {
-  height: 40px;
+  height: 38px;
   /* 👈 más pequeño para igualar visualmente */
 }
