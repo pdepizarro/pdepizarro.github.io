@@ -11765,3 +11765,7 @@ footer{
   background-color:var(--pp-black)!important;
   border-top:1px solid var(--pp-border);
 }
+
+@media (min-width: 576px) {
+  .w-sm-auto { width: auto !important; }
+}
