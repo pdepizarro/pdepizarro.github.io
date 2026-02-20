@@ -21,9 +21,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- Extra styles just for this page -->
     <style>
-        /* Subtle gradient + glow using your theme tokens */
+        /* Background glow matching your theme */
         .contact-hero {
             position: relative;
             overflow: hidden;
@@ -49,18 +48,93 @@
             backdrop-filter: blur(10px);
         }
 
+        .contact-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
         .contact-pill {
             border: 1px solid rgba(42, 47, 43, 0.9);
             background: rgba(0, 0, 0, 0.20);
-            border-radius: 999px;
+            border-radius: 18px;
         }
 
+        .contact-label {
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .contact-value {
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            word-break: break-word;
+        }
+
+        .contact-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+            text-decoration-color: rgba(var(--bs-primary-rgb), 0.7);
+            text-underline-offset: 4px;
+        }
+
+        /* Only 2 buttons: centered content + slightly smaller type */
         .contact-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
             border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 0.78rem 1.25rem;
+            line-height: 1.2;
+            white-space: nowrap;
         }
 
-        .contact-copy {
-            user-select: all;
+        .contact-action i {
+            line-height: 1;
+            font-size: 1.05em;
+        }
+
+        /* Small badge for role */
+        .role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(42, 47, 43, 0.9);
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        /* Subtle avatar/monogram */
+        .mono {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(42, 47, 43, 0.9);
+            background: rgba(var(--bs-primary-rgb), 0.12);
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        @media (max-width: 575.98px) {
+            .contact-value {
+                font-size: 1rem;
+            }
+
+            .contact-action {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -94,23 +168,32 @@
         <section class="py-5 contact-hero">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-10 col-xl-8">
+                    <div class="col-lg-9 col-xl-7">
                         <div class="contact-card rounded-4 p-4 p-md-5">
-                            <div class="text-center mb-4">
-                                <div
-                                    class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3">
-                                    <i class="bi bi-chat-dots"></i>
+
+                            <!-- Business card header -->
+                            <div
+                                class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start gap-3 gap-sm-4 mb-4">
+                                <div class="mono">PP</div>
+
+                                <div class="text-center text-sm-start flex-grow-1">
+                                    <div class="contact-label text-muted mb-2">Contact card</div>
+
+                                    <h1 class="fw-bolder mb-1" style="font-size: clamp(1.6rem, 3.5vw, 2.1rem);">
+                                        Pedro Pizarro Huertas
+                                    </h1>
+
+                                    <div class="role-badge mt-2">
+                                        <i class="bi bi-code-slash text-primary"></i>
+                                        <span class="fw-semibold text-muted">Mobile / Software Developer</span>
+                                    </div>
                                 </div>
-                                <h1 class="fw-bolder mb-2">Let’s talk</h1>
-                                <p class="lead fw-normal text-muted mb-0">
-                                    If you want to collaborate, hire me, or just ask something — feel free to call or
-                                    email me.
-                                </p>
                             </div>
 
-                            <!-- Contact blocks -->
+                            <div class="contact-divider mb-4"></div>
+
+                            <!-- Info first (no buttons here) -->
                             <div class="row g-3 g-md-4 mb-4">
-                                <!-- Phone -->
                                 <div class="col-md-6">
                                     <div class="contact-pill p-4 h-100">
                                         <div class="d-flex align-items-start gap-3">
@@ -118,19 +201,16 @@
                                                 <i class="bi bi-telephone"></i>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <div class="small text-muted">Phone</div>
-                                                <div class="h5 mb-2 contact-copy">+34 696533846</div>
-                                                <a class="btn btn-outline-primary contact-action w-100"
-                                                    href="tel:696533846">
-                                                    <i class="bi bi-telephone-outbound me-2"></i>
-                                                    Call me
-                                                </a>
+                                                <div class="contact-label text-muted mb-1">Phone</div>
+                                                <div class="contact-value">
+                                                    <a class="contact-link" href="tel:+34696533846">+34 696 533 846</a>
+                                                </div>
+                                                <div class="small text-muted mt-2">Available Mon–Fri · CET</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Email -->
                                 <div class="col-md-6">
                                     <div class="contact-pill p-4 h-100">
                                         <div class="d-flex align-items-start gap-3">
@@ -138,42 +218,49 @@
                                                 <i class="bi bi-envelope"></i>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <div class="small text-muted">Email</div>
-                                                <div class="h5 mb-2 contact-copy">ppizarrohuertas@gmail.com</div>
-                                                <a class="btn btn-primary contact-action w-100"
-                                                    href="mailto:ppizarrohuertas@gmail.com?subject=Contacto%20desde%20tu%20web&body=Hola%20Pedro%2C%0D%0A%0D%0A">
-                                                    <i class="bi bi-send me-2"></i>
-                                                    Send me an email
-                                                </a>
+                                                <div class="contact-label text-muted mb-1">Email</div>
+                                                <div class="contact-value">
+                                                    <a class="contact-link"
+                                                        href="mailto:ppizarrohuertas@gmail.com">ppizarrohuertas@gmail.com</a>
+                                                </div>
+                                                <div class="small text-muted mt-2">Preferred contact method</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Extra CTA -->
-                            <div class="text-center">
-                                <p class="mb-3 text-muted">
-                                    Prefer email? Click the button — it opens your default mail app with a ready-to-send
-                                    message.
+                            <!-- Primary CTA (1st button) -->
+                            <div class="text-center mb-4">
+                                <p class="lead fw-normal text-muted mb-3">
+                                    Want to collaborate or hire me? Send a quick email — I usually reply within 24–48h.
                                 </p>
 
-                                <!-- Optional secondary actions -->
-                                <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
-                                    <a class="btn btn-outline-primary contact-action px-4" href="mailto:ppizarrohuertas@gmail.com">
-                                        <i class="bi bi-envelope-paper me-2"></i>
-                                        Open mail app
-                                    </a>
-                                    <a class="btn btn-outline-secondary contact-action px-4" href="projects.html">
-                                        <i class="bi bi-folder2-open me-2"></i>
-                                        See my work
-                                    </a>
-                                </div>
+                                <a class="btn btn-primary contact-action px-4"
+                                    href="mailto:ppizarrohuertas@gmail.com?subject=Hi%20Pedro%20%E2%80%94%20Let%E2%80%99s%20talk&body=Hi%20Pedro%2C%0D%0A%0D%0AI'm%20reaching%20out%20from%20your%20website%20about...%0D%0A%0D%0A">
+                                    <i class="bi bi-send"></i>
+                                    Send me an email
+                                </a>
 
-                                <div class="small text-muted mt-4">
-                                    Typical response time: within 24–48h.
+                                <div class="small text-muted mt-3">
+                                    Tip: include timeline + budget + stack (if relevant).
                                 </div>
                             </div>
+
+                            <div class="contact-divider mb-4"></div>
+
+                            <!-- Secondary CTA at the very bottom (2nd button) -->
+                            <div class="d-flex flex-column align-items-center gap-2">
+                                <a class="btn btn-outline-secondary contact-action px-4" href="projects.html">
+                                    <i class="bi bi-folder2-open"></i>
+                                    See my work
+                                </a>
+
+                                <div class="small text-muted">
+                                    Based in Spain · Remote-friendly
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
