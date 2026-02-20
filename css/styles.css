@@ -11769,3 +11769,40 @@ footer{
 @media (min-width: 576px) {
   .w-sm-auto { width: auto !important; }
 }
+
+
+/* ------------------------------------------------------------
+   Projects cards (custom)
+   ------------------------------------------------------------ */
+.project-card .text-muted {
+  color: rgba(245, 245, 245, 0.75) !important;
+}
+
+.project-media {
+  background: rgba(255, 255, 255, 0.02);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Mobile tweaks */
+@media (max-width: 991.98px) {
+  .project-media {
+    min-height: 240px;
+    padding: 16px;
+  }
+
+  .project-img {
+    max-height: 300px;
+  }
+}
