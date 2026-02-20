@@ -13827,6 +13827,21 @@ footer {
   background-image: url("../assets/imaginbank_portfolio.png");
 }
 
+
+.project-media--caixabanknow::before {
+  background-image: url("../assets/caixabank_now_portfolio.png");
+}
+
+
+.project-media--rakutentv::before {
+  background-image: url("../assets/rakuten_tv_portfolio.png");
+}
+
+
+.project-media--translatorgo::before {
+  background-image: url("../assets/translator_go_portfolio.png");
+}
+
 @media (max-width: 991.98px) {
   .project-card .project-media {
     min-height: 240px;
