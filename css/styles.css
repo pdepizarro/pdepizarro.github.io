@@ -13839,23 +13839,26 @@ footer {
   }
 }
 
-.store-badges{
+/* Contenedor horizontal */
+.store-badges {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
-  flex-wrap: wrap;
+  margin-top: 8px;
 }
 
-.store-badge{
+/* Base */
+.store-badge {
   display: block;
   width: auto;
 }
 
-/* Ajuste óptico real */
-.store-badge--google{
+/* Ajuste óptico REAL */
+.store-badge--google {
   height: 44px;
 }
 
-.store-badge--apple{
-  height: 48px;
+.store-badge--apple {
+  height: 40px;
+  /* 👈 más pequeño para igualar visualmente */
 }
